@@ -32,7 +32,7 @@ The core workflow runs sequentially across 5 steps. Each step is a numbered R sc
 | **1** | `cmdpredict_1_*` | Pre-processing: load SCAPIS data, define predictors, filter complete cases, create 10-fold CV indices, save processed data |
 | **2** | `cmdpredict_2_*` | Model fitting: run Bayesian Stan model in 10-fold CV loop, extract fold-level predictions and posterior coefficient summaries |
 | **3** | `cmdpredict_3_*` | Results compilation: AUC, Brier score, calibration slope/intercept, Youden's J threshold, ROC and calibration plots |
-| **4** | `cmdpredict_4_*` | Full-sample fitting: refit model on the entire dataset, extract individual-level predicted probabilities with 95% credible intervals |
+| **4** | `cmdpredict_4_*` | Full-sample fitting: refit the best model identified in Step #3 on the entire dataset, extract individual-level predicted probabilities with 95% credible intervals |
 | **5** | `cmdpredict_5_*` | Subgroup analysis: stratify predictions by age, sex, smoking, hypertension, HDL, waist, and birthplace; compute group-level risk ratios |
 
 ---
